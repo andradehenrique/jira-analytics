@@ -6,7 +6,7 @@ A secure and responsive web application for displaying Jira issues and analytics
 
 **This is an exploratory project developed 100% with AI assistance.** The entire codebase was created using GitHub Copilot in Visual Studio Code, primarily leveraging the Claude 3.7 Sonnet Thinking model. This project demonstrates how AI can be used to rapidly develop functional applications while maintaining good architectural practices and code quality.
 
-For those interested in the AI collaboration process, check the [docs/prompts.md](/prompts.md) file which contains the conversations and prompts used to generate this project. This transparency aims to showcase modern AI-assisted development workflows and can serve as a learning resource for developers interested in AI pair programming.
+For those interested in the AI collaboration process, check the [prompts.md](/docs/prompts.md) file which contains the conversations and prompts used to generate this project. This transparency aims to showcase modern AI-assisted development workflows and can serve as a learning resource for developers interested in AI pair programming.
 
 ![home](/docs/image.png)
 
