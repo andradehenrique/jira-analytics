@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jira Analytics Dashboard
 
-## Getting Started
+A secure and responsive web application for displaying Jira issues and analytics for management meetings and presentations. This project allows teams to access, filter, and visualize Jira data without exposing sensitive API credentials to the client.
 
-First, run the development server:
+## AI Development Project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**This is an exploratory project developed 100% with AI assistance.** The entire codebase was created using GitHub Copilot in Visual Studio Code, primarily leveraging the Claude 3.7 Sonnet Thinking model. This project demonstrates how AI can be used to rapidly develop functional applications while maintaining good architectural practices and code quality.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For those interested in the AI collaboration process, check the prompts.md file which contains the conversations and prompts used to generate this project. This transparency aims to showcase modern AI-assisted development workflows and can serve as a learning resource for developers interested in AI pair programming.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![tela inicial](image.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- **Secure API Integration**: All Jira API calls happen server-side, keeping your credentials safe
+- **Project Filtering**: View issues from specific projects
+- **Advanced Filtering**: Filter by issue ID, status, sprint, and assignee with multi-select support
+- **Data Visualization**: Summary cards and charts showing status distribution and assignee workload
+- **Sprint Information**: View sprint details including start and end dates
+- **Responsive Design**: Mobile-first layout that works well on all devices and for presentations
+- **Dark/Light Mode**: Automatic theme switching based on system preferences
 
-To learn more about Next.js, take a look at the following resources:
+## Technology Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: [Next.js 15](https://nextjs.org/) with App Router
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: Turbopack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/jira-analytics.git
+   cd jira-analytics
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn
+   # or
+   pnpm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Create a .env.local file in the project root with your Jira credentials:
+   ```
+   JIRA_API_URL=https://your-domain.atlassian.net/rest/api/3
+   JIRA_USER_EMAIL=your-email@example.com
+   JIRA_API_TOKEN=your-api-token
+   ```
+
+   > Note: To generate a Jira API token, go to [Atlassian Account Settings](https://id.atlassian.com/manage-profile/security/api-tokens)
+
+4. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `JIRA_API_URL` | Your Jira instance REST API URL | Yes |
+| `JIRA_USER_EMAIL` | Email associated with your Jira account | Yes |
+| `JIRA_API_TOKEN` | Jira API token for authentication | Yes |
+
+## Usage
+
+### Dashboard
+
+The dashboard provides a quick overview with links to the main features of the application.
+
+### Issues Page
+
+The Issues page allows you to:
+1. Select a project from the dropdown
+2. Expand filters to further refine issues by ID, status, sprint, or assignee
+3. View summary statistics and charts
+4. See detailed issue data in a responsive table
+
+### Issue Details
+
+Click on any issue key in the table to view its complete details, including:
+- Summary and description
+- Status and assignee
+- Sprint information with dates
+- Project details
+- Creation and update timestamps
+
+## API Routes
+
+The project uses Next.js API routes to securely communicate with the Jira API:
+
+- `/api/projects` - Get all accessible projects
+- `/api/issues` - Get issues with filtering
+- `/api/statuses` - Get all available issue statuses
+- `/api/users` - Get users within a project
+- `/api/sprints` - Get sprints for a project
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+Please make sure to update tests as appropriate and adhere to the existing coding style.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Powered by [Jira Cloud REST API](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/)
+- Developed with [GitHub Copilot](https://github.com/features/copilot) and [Claude 3.7 Sonnet](https://www.anthropic.com/claude)
+
+---
+
+Made with ❤️ for better project visibility and AI-assisted development exploration
