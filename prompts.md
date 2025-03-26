@@ -1,4 +1,4 @@
-## Prompt Inicial
+## 1. Prompt Inicial
 
 esse é um projeto com somente a instalação base do Next.js 15, onde já vem com tailwind e todo o necessário pra começar uma aplicação.
 
@@ -14,7 +14,7 @@ Todas as queries devem acontecer do lado server da aplicação, se necessário c
 
 E use a premissa de mobile first. Crie os arquivos necessários
 
-### Prompt para adicionar sprints
+### 2. Prompt para adicionar sprints
 
 > Note: O prompt abaixo é uma resposta gerada no ChatGPT, com o modelo GPT-4o com Deep Research ativo, que passei posteriormente para o Github Copilot com modelo Claude 3.7 Sonnet Thinking, pois a implementação direta pelo Github Copilot não funcionou. No ChatGPT passei a documentação do Jira API v3, e o fetch das issues que estava incorreto.
 
@@ -185,3 +185,10 @@ community.developer.atlassian.com
 . Caso seja necessário mais confirmação sobre os dados completos da sprint, a própria API Agile do Jira fornece exemplo de retorno com startDate e endDate da sprint​
 stackoverflow.com
 , que utilizamos para extrair essas informações adicionais no processo descrito. Com isso, fica viável listar as issues junto com seus respectivos dados de sprint no seu aplicativo frontend.
+
+## 3. Prompt de tentativa de corrigir problema de build na página de detalhe da issue
+> Note: Não foi realizado a correção corretamente, talvez por uma limitação de versão que o modelo tem conhecimento, que é o Next 13 segundo o mesmo.
+
+Abstraia a lógica client side dessa página para um custom hook se possível, pois preciso que a página seja server side para funcionar os params. Deve ser async.
+
+Crie os arquivos necessários.
