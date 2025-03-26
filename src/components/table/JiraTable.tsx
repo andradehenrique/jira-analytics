@@ -107,7 +107,9 @@ export default function JiraTable({ issues, loading }: JiraTableProps) {
                 {issue.fields.assignee ? (
                   <div className="flex items-center">
                     <div className="flex-shrink-0 h-8 w-8">
-                      <Image 
+                      <Image
+                        width={32}
+                        height={32}
                         className="h-8 w-8 rounded-full" 
                         src={issue.fields.assignee.avatarUrls['48x48']} 
                         alt={issue.fields.assignee.displayName} 

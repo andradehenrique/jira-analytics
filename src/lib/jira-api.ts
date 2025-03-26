@@ -228,15 +228,15 @@ const generateMockIssues = (projectKey?: string) => {
     : mockProjects[0];
   
   const types = [
-    { name: 'Story', iconUrl: 'https://jira.atlassian.com/images/icons/story.svg' },
-    { name: 'Bug', iconUrl: 'https://jira.atlassian.com/images/icons/bug.svg' },
-    { name: 'Task', iconUrl: 'https://jira.atlassian.com/images/icons/task.svg' }
+    { name: 'Story', iconUrl: 'https://dummyjson.com/image/24x24/63ba3c' },
+    { name: 'Bug', iconUrl: 'https://dummyjson.com/image/24x24/e5493a' },
+    { name: 'Task', iconUrl: 'https://dummyjson.com/image/24x24/4bade8' }
   ];
   
   const priorities = [
-    { name: 'High', iconUrl: 'https://jira.atlassian.com/images/icons/priority_high.svg' },
-    { name: 'Medium', iconUrl: 'https://jira.atlassian.com/images/icons/priority_medium.svg' },
-    { name: 'Low', iconUrl: 'https://jira.atlassian.com/images/icons/priority_low.svg' }
+    { name: 'High', iconUrl: 'https://dummyjson.com/image/24x24/ff5630' },
+    { name: 'Medium', iconUrl: 'https://dummyjson.com/image/24x24/ffab00' },
+    { name: 'Low', iconUrl: 'https://dummyjson.com/image/24x24/0065ff' }
   ];
   
   const statuses = generateMockStatuses();
@@ -543,7 +543,7 @@ export async function fetchUsers(projectKey?: string): Promise<JiraUser[]> {
     return [...data, { 
       accountId: 'unassigned', 
       displayName: 'Unassigned', 
-      avatarUrls: { '48x48': 'https://avatar.atlassian.com/unassigned' } 
+      avatarUrls: { '48x48': 'https://dummyjson.com/image/48x48/282828' } 
     }];
   } catch (error) {
     console.error('Error fetching users:', error);

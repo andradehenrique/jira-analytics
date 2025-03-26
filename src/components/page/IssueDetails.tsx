@@ -75,7 +75,7 @@ export default function IssueDetails({ issueKey }: { issueKey: string }) {
               <div className="mb-4">
                 <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">Tipo</h3>
                 <div className="mt-1 flex items-center">
-                  <Image src={issue.fields.issuetype.iconUrl} alt={issue.fields.issuetype.name} className="h-4 w-4 mr-1" />
+                  <Image unoptimized width={16} height={16} src={issue.fields.issuetype.iconUrl} alt={issue.fields.issuetype.name} className="h-4 w-4 mr-1" />
                   <span className="text-sm text-gray-900 dark:text-gray-100">{issue.fields.issuetype.name}</span>
                 </div>
               </div>
@@ -112,7 +112,9 @@ export default function IssueDetails({ issueKey }: { issueKey: string }) {
                 <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">Responsável</h3>
                 {issue.fields.assignee ? (
                   <div className="mt-1 flex items-center">
-                    <Image 
+                    <Image
+                      width={32}
+                      height={32} 
                       src={issue.fields.assignee.avatarUrls['48x48']} 
                       alt={issue.fields.assignee.displayName} 
                       className="h-8 w-8 rounded-full mr-2" 
