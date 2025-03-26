@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { JiraIssue } from '@/types/jira';
+import Image from 'next/image';
 
 interface JiraTableProps {
   issues: JiraIssue[];
@@ -106,7 +107,7 @@ export default function JiraTable({ issues, loading }: JiraTableProps) {
                 {issue.fields.assignee ? (
                   <div className="flex items-center">
                     <div className="flex-shrink-0 h-8 w-8">
-                      <img 
+                      <Image 
                         className="h-8 w-8 rounded-full" 
                         src={issue.fields.assignee.avatarUrls['48x48']} 
                         alt={issue.fields.assignee.displayName} 

@@ -9,7 +9,7 @@ const USER_EMAIL = process.env.JIRA_USER_EMAIL;
 const USE_MOCK_DATA = !API_URL;
 
 // Basic auth using Buffer for base64 encoding
-const getHeaders = () => {
+const getHeaders = (): HeadersInit => {
   if (USE_MOCK_DATA) {
     return {
       'Content-Type': 'application/json',
