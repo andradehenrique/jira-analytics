@@ -5,13 +5,15 @@ import ProjectFilter from './ProjectFilter';
 import StatusFilter from './StatusFilter';
 import AssigneeFilter from './AssigneeFilter';
 import IdFilter from './IdFilter';
+import SprintFilter from './SprintFilter';
 import type { FilterOptions, JiraProject } from '@/types/jira';
-import { JiraStatus, JiraUser } from '@/lib/jira-api';
+import { JiraStatus, JiraUser, JiraSprint } from '@/lib/jira-api';
 
 interface FiltersPanelProps {
   projects: JiraProject[];
   statuses: JiraStatus[];
   users: JiraUser[];
+  sprints: JiraSprint[];
   filters: FilterOptions;
   updateFilters: (filters: Partial<FilterOptions>) => void;
   onApply: () => void;
@@ -21,6 +23,7 @@ export default function FiltersPanel({
   projects,
   statuses,
   users,
+  sprints,
   filters,
   updateFilters,
   onApply
@@ -57,6 +60,12 @@ export default function FiltersPanel({
               statuses={statuses}
               selectedStatuses={filters.statusIds || []}
               onChange={(statusIds) => updateFilters({ statusIds })}
+            />
+            
+            <SprintFilter
+              sprints={sprints}
+              selectedSprints={filters.sprintIds || []}
+              onChange={(sprintIds) => updateFilters({ sprintIds })}
             />
 
             <AssigneeFilter

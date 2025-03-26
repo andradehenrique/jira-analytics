@@ -33,6 +33,22 @@ export default function JiraTable({ issues, loading }: JiraTableProps) {
       .substring(0, 100) + '...';
   };
 
+  // Format date function
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return 'N/A';
+    try {
+      // Formata a data explicitamente em formato pt-BR (DD/MM/AAAA)
+      return new Date(dateString).toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return 'Data inválida';
+    }
+  };
+
   return (
     <div className="overflow-x-auto shadow-md rounded-lg">
       <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -51,6 +67,15 @@ export default function JiraTable({ issues, loading }: JiraTableProps) {
               Responsável
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              Sprint
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              Início Sprint
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider hidden lg:table-cell">
+              Fim Sprint
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider hidden md:table-cell">
               Atualizado
             </th>
           </tr>
@@ -97,8 +122,17 @@ export default function JiraTable({ issues, loading }: JiraTableProps) {
                   <span className="text-gray-500 dark:text-gray-400">Não atribuído</span>
                 )}
               </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                {issue.fields.sprint ? issue.fields.sprint.name : 'Sem sprint'}
+              </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                {new Date(issue.fields.updated).toLocaleDateString()}
+                {issue.fields.sprint ? formatDate(issue.fields.sprint.startDate) : 'N/A'}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 hidden lg:table-cell">
+                {issue.fields.sprint ? formatDate(issue.fields.sprint.endDate) : 'N/A'}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 hidden md:table-cell">
+                {formatDate(issue.fields.updated)}
               </td>
             </tr>
           ))}

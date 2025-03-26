@@ -164,6 +164,28 @@ export default function IssueDetails({ params }: { params: { issueKey: string } 
                   </p>
                 )}
               </div>
+
+              {issue.fields.sprint && (
+                <div className="mb-4">
+                  <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">Sprint</h3>
+                  <p className="mt-1 text-sm text-gray-900 dark:text-gray-100">
+                    {issue.fields.sprint.name}
+                  </p>
+                  <div className="flex flex-col mt-1">
+                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                      Início: {new Date(issue.fields.sprint.startDate).toLocaleDateString()}
+                    </span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                      Fim: {new Date(issue.fields.sprint.endDate).toLocaleDateString()}
+                    </span>
+                    {issue.fields.sprint.state && (
+                      <span className="text-xs font-medium mt-1 px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 inline-block w-fit">
+                        {issue.fields.sprint.state}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           

@@ -43,6 +43,14 @@ export interface JiraIssue {
       name: string;
       iconUrl: string;
     };
+    sprint?: {
+      id: number;
+      name: string;
+      state: string;
+      startDate: string;
+      endDate: string;
+      completeDate?: string;
+    };
   };
 }
 
@@ -57,4 +65,5 @@ export interface FilterOptions {
   issueIds?: string[];
   statusIds?: string[];
   assigneeIds?: string[];
+  sprintIds?: string[];
 }

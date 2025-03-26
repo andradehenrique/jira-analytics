@@ -14,6 +14,7 @@ export default function Issues() {
     projects, 
     statuses, 
     users, 
+    sprints,
     loading, 
     error, 
     filters, 
@@ -49,6 +50,7 @@ export default function Issues() {
         projects={projects}
         statuses={statuses}
         users={users}
+        sprints={sprints}
         filters={filters}
         updateFilters={updateFilters}
         onApply={loadIssues}
