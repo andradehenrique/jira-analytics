@@ -73,6 +73,21 @@ For those interested in the AI collaboration process, check the prompts.md file 
 | `JIRA_USER_EMAIL` | Email associated with your Jira account | Yes |
 | `JIRA_API_TOKEN` | Jira API token for authentication | Yes |
 
+## Mock Data Mode
+
+This application supports a "mock data" mode that activates automatically when the `JIRA_API_URL` environment variable is not provided. In this mode:
+
+- No actual Jira API calls are made
+- Sample data is generated for projects, issues, statuses, users, and sprints
+- All functionality works with the sample data
+- The application can be deployed to GitHub Pages without exposing credentials
+
+To enable mock data mode:
+1. Simply deploy without setting the Jira environment variables
+2. Or, remove `JIRA_API_URL` from your `.env.local` file
+
+This is perfect for demonstrations, public deployments, or development without a Jira instance.
+
 ## Usage
 
 ### Dashboard

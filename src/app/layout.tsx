@@ -12,6 +12,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Check if we're using mock data
+  const usingMockData = !process.env.JIRA_API_URL;
+
   return (
     <html lang="en">
       <body className="min-h-screen bg-gray-100 dark:bg-gray-950">
@@ -19,10 +22,15 @@ export default function RootLayout({
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex">
-                <div className="flex-shrink-0 flex items-center">
+              <div className="container mx-auto flex justify-between items-center">
                   <Link href="/" className="text-white text-2xl font-bold">
                     Jira Analytics
                   </Link>
+                  {usingMockData && (
+                    <div className="bg-yellow-600 text-white text-xs px-2 py-1 rounded">
+                      MOCK DATA MODE
+                    </div>
+                  )}
                 </div>
                 <div className="ml-6 flex items-center space-x-4">
                   <Link href="/" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-500">
