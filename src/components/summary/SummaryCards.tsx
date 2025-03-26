@@ -22,13 +22,6 @@ export default function SummaryCards({ issues }: SummaryCardsProps) {
     return acc;
   }, {});
 
-  // Count by issue type
-  const typeCount = issues.reduce<Record<string, number>>((acc, issue) => {
-    const type = issue.fields.issuetype.name;
-    acc[type] = (acc[type] || 0) + 1;
-    return acc;
-  }, {});
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
       <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
