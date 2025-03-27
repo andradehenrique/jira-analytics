@@ -17,9 +17,11 @@ export default function RootLayout({
   const usingMockData = !process.env.JIRA_API_URL;
 
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
-        <Script src="http://server-management-umami-1b4ee2-154-38-184-125.traefik.me/script.js" data-website-id="8f270578-98a0-4396-abea-b383ffbf3143" />
+        {process.env.NEXT_PUBLIC_UMAMI_URL && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+          <Script src={process.env.NEXT_PUBLIC_UMAMI_URL} data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID} />
+        )}
       </head>
       <body className="min-h-screen bg-gray-100 dark:bg-gray-950">
         <nav className="bg-indigo-600 dark:bg-indigo-800 text-white shadow-lg">
