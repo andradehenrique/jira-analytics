@@ -2,6 +2,12 @@
 
 A secure and responsive web application for displaying Jira issues and analytics for management meetings and presentations. This project allows teams to access, filter, and visualize Jira data without exposing sensitive API credentials to the client.
 
+## Live Demo
+
+**[Visit the live demo here: https://jiraanalytics.henriqueandrade.dev](https://jiraanalytics.henriqueandrade.dev)**
+
+Experience the application without any setup! This demo runs in mock data mode, allowing you to explore all features without needing a Jira account or API credentials.
+
 ## AI Development Project
 
 **This is an exploratory project developed 100% with AI assistance.** The entire codebase was created using GitHub Copilot in Visual Studio Code, primarily leveraging the Claude 3.7 Sonnet Thinking model. This project demonstrates how AI can be used to rapidly develop functional applications while maintaining good architectural practices and code quality.
