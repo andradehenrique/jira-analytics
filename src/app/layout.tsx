@@ -1,6 +1,7 @@
 import '@/app/globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Jira Analytics',
@@ -17,6 +18,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <Script src="http://server-management-umami-1b4ee2-154-38-184-125.traefik.me/script.js" data-website-id="8f270578-98a0-4396-abea-b383ffbf3143" />
+      </head>
       <body className="min-h-screen bg-gray-100 dark:bg-gray-950">
         <nav className="bg-indigo-600 dark:bg-indigo-800 text-white shadow-lg">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
