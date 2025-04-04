@@ -4,7 +4,7 @@ A secure and responsive web application for displaying Jira issues and analytics
 
 ## Live Demo
 
-**[Visit the live demo here: https://jiraanalytics.henriqueandrade.dev](https://jiraanalytics.henriqueandrade.dev)**
+**[Visit the live demo here](https://jiraanalytics.henriqueandrade.dev)**
 
 Experience the application without any setup! This demo runs in mock data mode, allowing you to explore all features without needing a Jira account or API credentials.
 
